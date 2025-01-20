@@ -31,7 +31,7 @@ export class UserController implements IUserController {
         displayPicture,
       });
 
-      return res.json(201).json(user);
+      return res.status(201).json(user);
     } catch (err) {
       console.error("Error in creating user controller: ", err);
       return res.status(500).json({ message: "Internal server error" });
@@ -40,7 +40,7 @@ export class UserController implements IUserController {
 
   async getUserById(req: Request, res: Response): Promise<Response> {
     try {
-      const { id } = req.body;
+      const { id } = req.params;
 
       if (!id) {
         return res.status(400).json({ message: "Missing id field " });
@@ -57,7 +57,7 @@ export class UserController implements IUserController {
 
   async getUserByEmail(req: Request, res: Response): Promise<Response> {
     try {
-      const { email } = req.body;
+      const { email } = req.params;
 
       if (!email) {
         return res.status(400).json({ message: "Missing email field " });

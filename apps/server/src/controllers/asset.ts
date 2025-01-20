@@ -41,7 +41,7 @@ export class AssetController implements IAssetController {
 
   async getAssetById(req: Request, res: Response): Promise<Response> {
     try {
-      const { id } = req.body;
+      const { id } = req.params;
 
       if (!id) {
         return res.status(400).json({ message: "Missing id field" });
@@ -51,7 +51,7 @@ export class AssetController implements IAssetController {
 
       return res.status(200).json(asset);
     } catch (err) {
-      console.error("Error in getting asset by id controller: ", err)
+      console.error("Error in getting asset by id controller: ", err);
       return res.status(500).json({ message: "Internal server error " });
     }
   }
