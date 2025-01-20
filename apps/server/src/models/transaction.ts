@@ -8,6 +8,7 @@ export interface ITransaction extends Document {
   seller: ObjectId;
   asset: ObjectId;
   status: TTxnStatus;
+  price: number;
   createdAt: Date;
 }
 
@@ -26,6 +27,10 @@ const TransactionSchema = new Schema(
     asset: {
       type: Schema.Types.ObjectId,
       ref: "Asset",
+      required: true,
+    },
+    price: {
+      type: Number,
       required: true,
     },
     status: {
