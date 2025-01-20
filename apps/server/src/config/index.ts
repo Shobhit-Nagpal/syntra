@@ -15,18 +15,21 @@ if (!API_VERSION || !PORT) {
 type Environment = "development" | "production";
 
 interface Config {
+  env: Environment;
   apiVersion: string;
   port: number;
   allowedHosts: Array<string>;
 }
 
 const development = {
+  env: "development" as Environment,
   apiVersion: API_VERSION,
   port: +PORT,
   allowedHosts: ALLOWED_HOSTS,
 };
 
 const production = {
+  env: "production" as Environment,
   apiVersion: API_VERSION,
   port: +PORT,
   allowedHosts: ALLOWED_HOSTS,

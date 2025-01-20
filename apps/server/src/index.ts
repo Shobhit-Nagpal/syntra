@@ -23,10 +23,12 @@ async function startServer() {
 
   await connectToDb();
 
-  app.use("/api", v1Router)
+  app.use("/api", v1Router);
 
   app.listen(Config.port, () => {
-    console.log(`Server is listening on port: ${Config.port}`);
+    console.log(
+      `Server is running in ${Config.env} mode and listening on port: ${Config.port}`,
+    );
   });
 }
 
