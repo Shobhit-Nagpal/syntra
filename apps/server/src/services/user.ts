@@ -4,7 +4,7 @@ import { IUserRepository } from "../repositories/user";
 
 type TProvider = (typeof Providers)[keyof typeof Providers];
 
-interface IUserService {
+export interface IUserService {
   createUser({
     email,
     name,

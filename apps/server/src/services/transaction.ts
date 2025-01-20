@@ -1,7 +1,7 @@
 import { ITransaction } from "../models/transaction";
 import { ITransactionRepository } from "../repositories/transaction";
 
-interface ITransactionService {
+export interface ITransactionService {
   createTransaction({
     buyer,
     seller,

@@ -2,7 +2,7 @@ import { isValidRating } from "../lib/utils";
 import { IRating } from "../models/rating";
 import { IRatingRepository } from "../repositories/rating";
 
-interface IRatingService {
+export interface IRatingService {
   createRating({
     value,
     asset,

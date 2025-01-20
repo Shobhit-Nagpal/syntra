@@ -1,7 +1,7 @@
 import { IAsset } from "../models/asset";
 import { IAssetRepository } from "../repositories/asset";
 
-interface IAssetService {
+export interface IAssetService {
   createAsset({
     name,
     description,
